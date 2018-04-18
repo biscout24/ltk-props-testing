@@ -26,65 +26,28 @@
             <div class="slides">
                 <section data-markdown>
                     <textarea data-template>
-                        ## Why property-based testing matters?
+                        ## Why does property-based testing matter?
                     </textarea>
                 </section>
-                <section>
-                    <aside class="notes">
-                        The goal of this presentation: <br/>
-                        - A<br/>
-                        - B<br/>
-                        <br/>
-                    </aside>
-                    <p class="fragment">
-                        Some P class fragment
-                    </p>
+                <section
+                        data-markdown="slides/slide-01.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
                 </section>
-                <section>
-                    <h3>H3 Title</h3>
-                    <p>ddd</p>
-                    <p>ddd</p>
+                <section
+                        data-markdown="slides/slide-02.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
                 </section>
-                <section>
-                    <h3>H3 title</h3>
-                    <aside class="notes">
-                        aside <br/>
-                        notes <br/>
-                    </aside>
+                <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
                 </section>
-                <section>
-                    <pre><code data-trim data-noescape>
-                        (def lazy-fib
-                          (concat
-                           [0 1]
-                           <mark>((fn rfib [a b]</mark>
-                                (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-                    </code></pre>
-                </section>
-                <section>
-                    <pre>
-                        <code data-trim data-noescape class="scala">
-                            trait FraudRuleTemplate extends RuleTemplateI {
-                              protected[scoring] def matches(fraudHistory: FraudHistory,
-                                                             ruleParams: Params): Boolean
-                              final def matches(ruleParams: Params, tx: ViewWithDeviceInfo,
-                                                scoringRecordHistory: => ScoringRecordHistory,
-                                                fraudHistory: => FraudHistory): Boolean =
-                                matches(fraudHistory, ruleParams)
-                            }
-                        </code>
-                    </pre>
-                </section>
-                <section data-markdown="slides/slide1.md"/>
-                <section data-markdown>
-                    <textarea data-template>
-                        AAA
-                    </textarea>
-                </section>
-                <section data-markdown>
-                    <textarea data-template>
-                        AAA
-                    </textarea>
+                <section
+                        data-markdown="slides/slide-monad-tests.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
                 </section>
                 <section>
                     <h3>Done</h3>
