@@ -41,4 +41,9 @@ from Lecture 1.4 - Monads, [Functional Program Design in Scala](https://coursera
 ```
 
 
+### “Different paths, same destination”
+![](./img/property_commutative.png "commutative property")
+
+
+
 ### Show me some code

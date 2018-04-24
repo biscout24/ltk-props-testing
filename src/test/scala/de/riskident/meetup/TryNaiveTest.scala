@@ -44,5 +44,5 @@ class TryNaiveTest extends FunSuite with Matchers with Discipline {
   }
 
 
-  checkAll("Try String => Int => Option[Boolean]", MonadTests[Try].stackUnsafeMonad[Int, Int, Int])
+  checkAll("Try Int => Int => Int", MonadTests[Try].stackUnsafeMonad[Int, Int, Int])
 }

@@ -49,15 +49,13 @@
                     <aside class="notes">
                         Who likes tests?
                         Who writes tests?
-                        What do you test?
-                        Logic - happy path; corner cases; error handling; performance; other non-functional requirements - e.g. security
-                    </aside>
-                </section>
-                <section>
-                    ???
-                    <aside class="notes">
-                        Today we will talk about: Why does property-based testing matter? What is the role of PBT and will have a look on some examples.
-                        This talk about how and why do you test your software.
+
+                        We do care about test in DeviceIdent team. That helps us to operate and develop stable software over the time.
+
+                        Today we will talk about:
+                         - Why does property-based testing could help you
+                         - What is the role of PBT and we will take a look at existing patterns
+                         - We will see examples in existing libraries
                     </aside>
                 </section>
                 <section>
@@ -75,7 +73,7 @@
                             /**
                              * DeviceIdent
                              * 24x7 SaaS application
-                             * 0downtime deployment
+                             * 0-downtime deployment
                              * real-time device scoring
                              */
                             val techStack = Map(
@@ -91,30 +89,34 @@
                         </p>
                     </div>
                     <aside class="notes">
-                        My name is Boris, I started my careera as a Java developer, built MVC/enterprise applications,
-                        Then I built real-time messaging integration  solutions and did performance optimization based on JVM/Linux
+                        My name is Boris, I started my career as a Java developer, built MVC/enterprise applications,
+                        Then I built real-time messaging integration solutions and did performance optimization based on JVM/Linux
                         Later on I made a project with Erlang and moved to scala.
 
                         Currently I'm working at the DeviceIdent team at RiskIdent.
-
-
                     </aside>
                 </section>
                 <section>
-                    Parsing JSON is a Minefield
-                    http://seriot.ch/json/pruned_results.png
+                    What do you test?
+                    <p data-markdown>
+                        * Happy path
+                        * Corner cases
+                        * Error handling
+                        * Performance
+                        * Others...
+                    </p>
+                    => example-based testing
+                    <aside class="notes">
+                        How do you know, that your code works?
+                        Logic - happy path; corner cases; error handling; performance; other non-functional requirements - e.g. security
+                        It is example-based testing. Is it enough?
+                    </aside>
                 </section>
-                <section
-                        data-markdown="slides/intro.md"
-                        data-separator="^\n\n\n"
-                        data-separator-vertical="^\n\n"
-                        data-separator-notes="^Note:">
-                </section>
-                <section
-                        data-markdown="slides/slide-01.md"
-                        data-separator="^\n\n\n"
-                        data-separator-vertical="^\n\n"
-                        data-separator-notes="^Note:">
+                <section>
+                    <h3>Example #1</h3>
+                    <aside class="notes">
+                        Lets check a couple of examples
+                    </aside>
                 </section>
                 <section
                         data-markdown="slides/sort-with.md"
@@ -122,7 +124,46 @@
                         data-separator-vertical="^\n\n"
                         data-separator-notes="^Note:">
                 </section>
+                <section>
+                    <h3>Example #2</h3>
+                </section>
+                <section>
+                    <section>
+                        "JSON is not the harmless, general purpose data-interchange format as many do believe. No two parsers behave the same way!"
+                        <br/>
+                        (c) Nicolas Seriot, "Parsing JSON is a Minefield"
+                        <aside class="notes">
+                            Nicolas Seriot did a research and tests bunch of json parser implementations
+                        </aside>
+                    </section>
+                    <section data-background-image="img/json-parsing-tests.png" data-background-size="1024px">
+                        <aside class="notes">
+                            No two parsers behave the same way!
+                            It is hard to reason about corner cases.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <h3>How-to test unknown?</h3>
+                    <aside class="notes">
+                        Property-based testing takes a very different approach, where a single test is run hundreds of times with randomly generated inputs.
+
+                        Property-based testing is a great way to find edge cases, and also helps you to understand and document the behaviour of your code under all conditions.
+                    </aside>
+                </section>
+                <section
+                        data-markdown="slides/intro.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
+                </section>
+                <section>
+                    <h3>Where is the code?</h3>
+                </section>
                 <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
+                    <aside class="notes">
+                        I wold like to show you how could you apply property-based testing idea to verify monads law in application to scala standard library
+                    </aside>
                 </section>
                 <section
                         data-markdown="slides/monad-tests.md"
@@ -131,7 +172,45 @@
                         data-separator-notes="^Note:">
                 </section>
                 <section>
-                    <h3>Done</h3>
+                    <p data-markdown>
+                        Property-based testing helps you to find edge cases and understand code behaviour
+
+                        We saw patters you could use to verify you algebra
+
+                        Property-based testing is used in industry, e.g. `cats-laws` module from Typelevel
+                        > ScalaCheck is used by several prominent Scala projects, for example the Scala compiler and the Akka concurrency framework. (www.scalacheck.org/)
+                    </p>
+                </section>
+                <section>
+                    <h3>References</h3>
+                    <pre>
+                    Scott Wlaschin An introduction to property based testing
+                    The lazy programmer's guide to writing 1000's of testsTweet
+                    https://fsharpforfunandprofit.com/pbt/
+
+                    FRED HÉBERT
+                    EVERYTHING IS TERRIBLE
+                    http://s3.amazonaws.com/erlang-conferences-production/media/files/000/000/766/original/Fred_Herbert_-_Everything_is_terrible.pdf?1510584735
+
+                    Charles O'Farrell
+                    How I learned to stop unit testing and love property-based testing
+                    http://blog.charleso.org/property-testing-preso/#1
+
+                    Chris Phelps
+                    Cats Law Checking with Discipline
+                    http://chrisphelps.github.io/scala/2016/11/30/Cats-Law-Checking-With-Discipline/
+
+                    http://www.scalatest.org
+                    Property-based testing
+                    http://www.scalatest.org/user_guide/property_based_testing
+
+                    ScalaCheck: The Definitive Guide
+                    https://booksites.artima.com/scalacheck/examples/html/ch06.html
+
+                    John Hughes
+                    Testing the Hard Stuff and Staying Sane
+                    https://www.infoq.com/presentations/testing-techniques-case-study
+                    </pre>
                 </section>
             </div>
         </div>

@@ -22,11 +22,6 @@ import scala.util.Try
 
 class TryTest extends FunSuite with Matchers with Discipline {
 
-/*
-  implicit override val generatorDrivenConfig: PropertyCheckConfiguration =
-    PropertyCheckConfiguration(minSuccessful = 5000)
-*/
-
   import de.riskident.meetup.Helpers.eqException
   import de.riskident.meetup.Helpers.arbAtoBwithThrow
 

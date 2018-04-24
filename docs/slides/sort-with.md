@@ -3,7 +3,7 @@
 package scala
 package collection
 
-trait SeqLike[+A, +Repr] extends ...
+trait SeqLike[+A, +Repr] //extends ...
 
   /** Sorts this $coll according to a comparison function.
    *  $willNotTerminateInf
@@ -23,8 +23,33 @@ trait SeqLike[+A, +Repr] extends ...
    */
   def sortWith(lt: (A, A) => Boolean): Repr = sorted(Ordering fromLessThan lt)
 
-...
+//...
 ```
+Note: what do you thinkg, is it a pure function?
+
+
+Lets check it out:
+```scala
+package de.riskident.meetup
+
+import org.scalacheck.Gen
+import org.scalatest.FlatSpec
+import org.scalatest.Matchers
+import org.scalatest.prop.GeneratorDrivenPropertyChecks
+
+class SortWithTest extends FlatSpec with GeneratorDrivenPropertyChecks with Matchers {
+
+  private def mySortFun(l: Int, r: Int): Boolean = { l <= r}
+
+  "List.sortWith" should "produce the same list while sort twice" in forAll(minSuccessful(500)) { 
+    l: List[Int] =>
+      l.sortWith(mySortFun) should be(l.sortWith(mySortFun).sortWith(mySortFun))
+  }
+}
+```
+Note: what I do here, is a pattern. 
+I should receive the same order in case I sort twice.
+You could also see, that I use GeneratorDrivenPropertyChecks and some magic happens at `forAll` place
 
 
 ```scala
@@ -38,3 +63,5 @@ trait SeqLike[+A, +Repr] extends ...
                          0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2147483648, 0, 0, 0, 0, -1, -1) // 736 shrinks
 [info]     )
 ```
+Note: Boom! We have got an exception. Lets imagine, you code could stop your application if you use wrong sort function. 
+And it is not so easy to find an example to check this corner case. 
