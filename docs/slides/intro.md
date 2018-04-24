@@ -1,5 +1,5 @@
 ### Introduction to properties
-based on ["Choosing properties for property-based testing"](https://fsharpforfunandprofit.com/posts/property-based-testing-2/) from Scott Wlaschin blog
+based on ["Choosing properties for property-based testing"](https://fsharpforfunandprofit.com/posts/property-based-testing-2/) from Scott Wlaschin's blog
 Note: if you generate the data, how could you check the results? Properties for the rescue.  
 You think about your code as a set of laws, or algebra
 Here is a list of patterns we could find
