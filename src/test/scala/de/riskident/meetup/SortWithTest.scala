@@ -12,6 +12,10 @@ class SortWithTest extends FlatSpec with GeneratorDrivenPropertyChecks with Matc
   "List.sortWith" should "produce the same list while sort twice" in forAll(minSuccessful(500)) { l: List[Int] =>
     l.sortWith(mySortFun) should be(l.sortWith(mySortFun).sortWith(mySortFun))
   }
+
+  "induction" should "be applicable to size" in forAll { (i: Int, l: List[Int]) =>
+    (i :: l).size should be (l.size + 1)
+  }
 }
 
 import org.scalacheck.Arbitrary._
