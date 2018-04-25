@@ -13,6 +13,7 @@ object Helpers {
     }
   }
 
+  //poser of generators
   implicit def arbAtoBwithThrow[A, B](implicit a: Arbitrary[A], b: Arbitrary[B]): Arbitrary[A => B] = {
     Arbitrary(
       Gen.oneOf(
@@ -21,7 +22,7 @@ object Helpers {
           b <- arbitrary[B]
         } yield {a: A => b},
         Gen.const(
-          {a: A => throw new IllegalStateException("arbitrary [A => B]")}
+          {a: A => throw new IllegalStateException("arbitrary function [A => B]")}
         )
       )
     )

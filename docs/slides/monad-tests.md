@@ -1,4 +1,4 @@
-### Is scala `Future[T]` a monad?
+Is scala `scala.util.Try[T]` a monad?
 - [ ] Yes
 - [ ] No
 - [ ] What are you talking about?
@@ -8,13 +8,12 @@
 ### And Why?
 ```scala
 import cats.Monad
-import scala.concurrent.Future
+import scala.util.Try
 
-new Monad[Future] {
-    def pure[A](value: A): Future[A] = Future(value)
+implicit val myTryMonad: Monad[Try] = new Monad[Try] {
+    def pure[A](value: A): Try[A] = Try(value) //unit
 
-    def flatMap[A, B](fa: Future[A])(f: A => Future[B]): Future[B] = fa.flatMap(f)
-}
+    def flatMap[A, B](fa: Try[A])(f: A => Try[B]): Try[B] = fa.flatMap(f) //bind
 ```
 
 

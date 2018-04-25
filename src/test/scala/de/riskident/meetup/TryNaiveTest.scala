@@ -1,15 +1,10 @@
 package de.riskident.meetup
 
 import cats.Monad
-import cats.instances.boolean._
 import cats.instances.int._
-import cats.instances.option._
 import cats.instances.tuple._
 import cats.kernel.Eq
 import cats.laws.discipline._
-import org.scalacheck.Arbitrary
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.Gen
 import org.scalatest.FunSuite
 import org.scalatest.Matchers
 import org.typelevel.discipline.scalatest.Discipline

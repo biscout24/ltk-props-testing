@@ -14,18 +14,16 @@ import org.typelevel.discipline.scalatest.Discipline
 import org.scalacheck.Arbitrary.arbitrary
 import org.scalacheck.Gen
 import org.scalacheck.Arbitrary
-import org.scalactic.anyvals.PosInt
 
 import scala.concurrent.Await
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
-import scala.util.control.NonFatal
 
 class FutureTest extends FunSuite with Matchers with Discipline {
 
   import de.riskident.meetup.Helpers.eqException
-  import de.riskident.meetup.Helpers.arbAtoBwithThrow
+  //import de.riskident.meetup.Helpers.arbAtoBwithThrow
 
   implicit val myFutureMonad: Monad[Future]  = new Monad[Future] {
     def pure[A](value: A): Future[A] = Future(value)
@@ -74,5 +72,5 @@ class FutureTest extends FunSuite with Matchers with Discipline {
     }
   }
 
-  checkAll("Future [String => Int] => String => Option[Boolean]", MonadTests[Future].monad[String => Int, Int, Option[Boolean]])
+  checkAll("Future Int, Int, Option[Boolean]", MonadTests[Future].monad[Int, Int, Option[Boolean]])
 }

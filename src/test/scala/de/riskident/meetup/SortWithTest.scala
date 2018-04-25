@@ -14,7 +14,6 @@ class SortWithTest extends FlatSpec with GeneratorDrivenPropertyChecks with Matc
   }
 }
 
-
 import org.scalacheck.Arbitrary._
 object GenTuple {
 

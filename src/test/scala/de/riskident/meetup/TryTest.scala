@@ -2,19 +2,15 @@ package de.riskident.meetup
 
 import cats.Monad
 import cats.instances.int._
-import cats.instances.string._
-import cats.instances.option._
-import cats.instances.boolean._
 import cats.instances.tuple._
 import cats.kernel.Eq
 import cats.laws.discipline._
+import org.scalacheck.Arbitrary
+import org.scalacheck.Arbitrary.arbitrary
+import org.scalacheck.Gen
 import org.scalatest.FunSuite
 import org.scalatest.Matchers
 import org.typelevel.discipline.scalatest.Discipline
-import org.scalacheck.Arbitrary.arbitrary
-import org.scalacheck.Gen
-import org.scalacheck.Arbitrary
-import org.scalactic.anyvals.PosInt
 
 import scala.util.Failure
 import scala.util.Success
@@ -22,8 +18,8 @@ import scala.util.Try
 
 class TryTest extends FunSuite with Matchers with Discipline {
 
-  import de.riskident.meetup.Helpers.eqException
   import de.riskident.meetup.Helpers.arbAtoBwithThrow
+  import de.riskident.meetup.Helpers.eqException
 
   implicit val myTryMonad: Monad[Try] = new Monad[Try] {
     def pure[A](value: A): Try[A] = Try(value) //unit
