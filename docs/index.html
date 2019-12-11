@@ -63,27 +63,31 @@
                         <p data-markdown>
                             Barys Ilyushonak aka Boris
 
+                            Lead Software Engineer @ Foundation Services / München
+
                             [Java => Erlang => Scala]
+
                         </p>
-                        <img src="img/DI-wp-01.png"  height="150px">
+                        <img src="img/Bender.png"  height="150px">
                     </div>
                     <div style="position:absolute; top: 20%; right: 10%; width: 40%;">
                         <p data-markdown>
                             ```scala
                             /**
-                             * DeviceIdent
+                             * graph-based analysis
                              * 24x7 SaaS application
                              * 0-downtime deployment
-                             * real-time device scoring
+                             * real-time processing
                              */
                             val techStack = Map(
-                            "lang"      -> "scala",
-                            "reactive"  -> "akka",
-                            "web"       -> "Play!",
-                            "messaging" -> "kafka",
-                            "frontEnd"  -> "nginx",
-                            "storage"   -> "MongoDB",
-                            "os"        -> "debian"
+                            "lang"            -> "scala",
+                            "effect"          -> "cats-effect",
+                            "web"             -> "http4s",
+                            "messaging"       -> "kafka",
+                            "frontEnd"        -> "nginx",
+                            "storage"         -> "MongoDB",
+                            "os"              -> "debian",
+                            "orchestration"   -> "k8s"
                             )
                             ```
                         </p>
@@ -158,20 +162,6 @@
                         data-separator-notes="^Note:">
                 </section>
                 <section>
-                    <h3>Where is the code?</h3>
-                </section>
-                <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
-                    <aside class="notes">
-                        I wold like to show you how could you apply property-based testing idea to verify monads law in application to scala standard library
-                    </aside>
-                </section>
-                <section
-                        data-markdown="slides/monad-tests.md"
-                        data-separator="^\n\n\n"
-                        data-separator-vertical="^\n\n"
-                        data-separator-notes="^Note:">
-                </section>
-                <section>
                     <p data-markdown>
                         **Property-based testing** helps you to **find edge cases** and **understand code behaviour**
 
@@ -205,6 +195,28 @@
                     * https://www.scalacheck.org/
                     * http://www.scalatest.org/user_guide/property_based_testing
                     </p>
+                </section>
+                <section>
+                    <h3>Where is the code?</h3>
+                    <p data-markdown>
+                        [Take a look at full presentation](https://biscout24.github.io/ltk-props-testing/)
+
+                        Code examples at [git@github.com:biscout24/ltk-props-testing.git](https://github.com/biscout24/ltk-props-testing/)
+                    </p>
+                    <aside class="notes">
+                        There is an example how one could use `cats-law` to test your instances according to functional laws, e.g. if Option/Try or Future obey monads laws.
+                    </aside>
+                </section>
+                <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
+                    <aside class="notes">
+                        I wold like to show you how could you apply property-based testing idea to verify monads law in application to scala standard library
+                    </aside>
+                </section>
+                <section
+                        data-markdown="slides/monad-tests.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
                 </section>
             </div>
         </div>
