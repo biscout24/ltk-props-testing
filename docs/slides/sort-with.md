@@ -25,7 +25,7 @@ trait SeqLike[+A, +Repr] //extends ...
 
 //...
 ```
-Note: what do you thinkg, is it a pure function?
+Note: what do you think, is it a pure function?
 
 
 Lets check it out:
