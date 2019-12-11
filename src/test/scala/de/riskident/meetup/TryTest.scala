@@ -55,5 +55,5 @@ class TryTest extends FunSuite with Matchers with Discipline {
   }
 
 
-  checkAll("Try [String => Int] => Int => Option[Boolean]", MonadTests[Try].stackUnsafeMonad[Int => Int, Int, Int])
+  checkAll("Try [Int => Int] => Int => Option[Boolean]", MonadTests[Try].stackUnsafeMonad[Int => Int, Int, Int])
 }
