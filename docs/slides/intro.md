@@ -22,7 +22,7 @@ Prop.forAll { (x: Int, y: Int) =>
   x + y == y + x
 }
 ```
-Note: 
+Note: lets assume example based testing for sum function, and you deal with lazy or very funny developer. He could make all tests green just by adding match-case here :)
 
 
 ### "There and back again"

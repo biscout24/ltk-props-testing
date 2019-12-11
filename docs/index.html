@@ -162,20 +162,6 @@
                         data-separator-notes="^Note:">
                 </section>
                 <section>
-                    <h3>Where is the code?</h3>
-                </section>
-                <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
-                    <aside class="notes">
-                        I wold like to show you how could you apply property-based testing idea to verify monads law in application to scala standard library
-                    </aside>
-                </section>
-                <section
-                        data-markdown="slides/monad-tests.md"
-                        data-separator="^\n\n\n"
-                        data-separator-vertical="^\n\n"
-                        data-separator-notes="^Note:">
-                </section>
-                <section>
                     <p data-markdown>
                         **Property-based testing** helps you to **find edge cases** and **understand code behaviour**
 
@@ -209,6 +195,28 @@
                     * https://www.scalacheck.org/
                     * http://www.scalatest.org/user_guide/property_based_testing
                     </p>
+                </section>
+                <section>
+                    <h3>Where is the code?</h3>
+                    <p data-markdown>
+                        [Take a look at full presentation](https://biscout24.github.io/ltk-props-testing/)
+
+                        Code examples at [git@github.com:biscout24/ltk-props-testing.git](https://github.com/biscout24/ltk-props-testing/)
+                    </p>
+                    <aside class="notes">
+                        There is an example how one could use `cats-law` to test your instances according to functional laws, e.g. if Option/Try or Future obey monads laws.
+                    </aside>
+                </section>
+                <section data-background-size="840px" data-background-image="img/one-does-not-5ad72d.jpg">
+                    <aside class="notes">
+                        I wold like to show you how could you apply property-based testing idea to verify monads law in application to scala standard library
+                    </aside>
+                </section>
+                <section
+                        data-markdown="slides/monad-tests.md"
+                        data-separator="^\n\n\n"
+                        data-separator-vertical="^\n\n"
+                        data-separator-notes="^Note:">
                 </section>
             </div>
         </div>
