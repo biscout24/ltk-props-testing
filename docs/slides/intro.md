@@ -18,8 +18,8 @@ aka commutative property
 ![](./img/property_commutative.png "commutative property")
 
 ```scala
-Prop.forAll { (a: Int, b: Int) =>
-  a + b == b + a
+Prop.forAll { (x: Int, y: Int) =>
+  x + y == y + x
 }
 ```
 Note: 
@@ -35,7 +35,7 @@ Prop.forAll { xs: List[Int] =>
   xs.reverse.reverse == xs
 }
 ```
-Note: What is a typical example of it? Serialization/Desirialization 
+Note: What is a typical example of it? Serialization/Deserialization or write/read to/from DB
 
 
 ### "Some things never change"
