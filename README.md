@@ -1,4 +1,4 @@
-[Presentation](https://biscout24.github.io/ltk-props-testing/)
+[Presentation](https://biscout42.github.io/ltk-props-testing/)
 
 To run it locally [install nodejs](http://nodejs.org/) and  
 ```shell script
